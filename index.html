@@ -8,40 +8,39 @@
 </head>
 
 <body>
-    <div id="books">
-        <h1 id="title"></h1>
-        <h3 id="author"></h3>
+    <div id="myList">
     </div>
 
-    <div id="myList">
+    <div>
+        <input type="text" id="title" placeholder="Enter Book Title">
         <input type="text" id="name" placeholder="Enter Author's name">
         <button onclick="displayToScreen()">Set Author</button>
     </div>
 
     <script>
-        
+
         var authors = ["author1", "author2"]
-        var book1 = { author: "author1", title: "book1", published: "year1"};
-        var book2 = { author: "author2", title: "book2", published: "year1"};
-        var book3 = { author: "author3", title: "book3", published: "year1"};
+        var book1 = { author: "author1", title: "book1" };
+        var book2 = { author: "author2", title: "book2" };
+        var book3 = { author: "author3", title: "book3" };
 
-
+        let books = [book1, book2, book3];
 
         function displayToScreen() {
-            let n = document.getElementById("name").value;
+            let a = document.getElementById("name").value;
+            let t = document.getElementById("title").value;
+
+            let newBook={title: t, author: a}
             authors.push(n);
-            document.getElementById("name").value = "";
             printAuthList();
         }
 
-        function printAuthList(){
-            let auth= document.getElementById("myList");
-            auth.innerHTML ="";
-            for(let i=0; i<authors.length; i++){
-                if( (i%2)===0){
-                    auth.innerHTML += "<h2 style='color=blue'>" + authors[i].title + "</h2>";
-                }
-                auth.innerHTML += "<h2>" + authors[i] + "</h2>";
+        function printAuthList() {
+            let auth = document.getElementById("myList");
+            auth.innerHTML = "";
+            for (let i = 0; i < authors.length; i++) {
+                auth.innerHTML += "<h2 style='color=blue'>" + books[i].title + "</h2>";
+                auth.innerHTML += "<h4 style='color=blue'>" + books[i].author + "</h4>";
             }
         }
 
