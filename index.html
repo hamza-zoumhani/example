@@ -27,11 +27,10 @@
         let books = [book1, book2, book3];
 
         function displayToScreen() {
-            let a = document.getElementById("name").value;
+            let n = document.getElementById("name").value;
             let t = document.getElementById("title").value;
-
-            let newBook={title: t, author: a}
             authors.push(n);
+            document.getElementById("name").value = "";
             printAuthList();
         }
 
