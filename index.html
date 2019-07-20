@@ -15,29 +15,37 @@
         <input type="text" id="title" placeholder="Enter Book Title">
         <input type="text" id="name" placeholder="Enter Author's name">
         <button onclick="displayToScreen()">Set Author</button>
+        <button onclick="removeTheBook()">Remove Book</button>
+
     </div>
 
     <script>
 
-        var authors = ["author1", "author2"]
-        var book1 = { author: "author1", title: "book1" };
-        var book2 = { author: "author2", title: "book2" };
-        var book3 = { author: "author3", title: "book3" };
+        // var authors = ["author1", "author2"]
+        // var book1 = { author: "author1", title: "book1" };
+        // var book2 = { author: "author2", title: "book2" };
+        // var book3 = { author: "author3", title: "book3" };
 
-        let books = [book1, book2, book3];
+        let books = [
+            { author: "author1", title: "book1" },
+            { author: "author2", title: "book2" },
+            { author: "author3", title: "book3" },
+            ];
 
         function displayToScreen() {
             let n = document.getElementById("name").value;
             let t = document.getElementById("title").value;
-            authors.push(n);
-            document.getElementById("name").value = "";
+
+            let newBook={title: t, author: n};
+
+            books.push(newBook);
             printAuthList();
         }
 
         function printAuthList() {
             let auth = document.getElementById("myList");
             auth.innerHTML = "";
-            for (let i = 0; i < authors.length; i++) {
+            for (let i = 0; i < books.length; i++) {
                 auth.innerHTML += "<h2 style='color=blue'>" + books[i].title + "</h2>";
                 auth.innerHTML += "<h4 style='color=blue'>" + books[i].author + "</h4>";
             }
