@@ -8,21 +8,20 @@
 </head>
 
 <body>
+    <div id="music">
+        <h1 id="title"></h1>
+        <h3 id="author"></h3>
+    </div>
+    <input type="text" id="name" placeholder="Charles Dickens">
+    <button onclick="displayToScreen()">Set Author</button>
     <script>
-        function displayToScreen(sometext) {
-            document.write(sometext);
+        function displayToScreen() {
+            document.getElementById("name").value;
         }
 
-        let ourList = ["one", "two", "three"];
-        ourList[3]="four";
-        
+        let box= document.getElementById("name").value;
 
-        for(let i=0; i<ourList.length; i++){
-            let message = ourList[i];
-            displayToScreen(message);
-            document.write("<br>");
-            
-        }
+
 
     </script>
 </body>
