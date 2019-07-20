@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>functions</title>
+</head>
+
+<body>
+    <script>
+        function displayToScreen(sometext) {
+            document.write(sometext);
+        }
+
+        let ourList = ["one", "two", "three"];
+        ourList[3]="four";
+        
+
+        for(let i=0; i<ourList.length; i++){
+            let message = ourList[i];
+            displayToScreen(message);
+            document.write("<br>");
+        }
+
+    </script>
+</body>
+
+</html>
