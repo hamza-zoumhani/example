@@ -13,13 +13,14 @@
         <h3 id="author"></h3>
     </div>
     <input type="text" id="name" placeholder="Charles Dickens">
+    <input type="text" id="ttl" placeholder="title">
     <button onclick="displayToScreen()">Set Author</button>
+
     <script>
         function displayToScreen() {
-            document.getElementById("name").value;
+           document.getElementById("title").innerText= document.getElementById("ttl").value;
+           document.getElementById("author").innerText= document.getElementById("name").value;
         }
-
-        let box= document.getElementById("name").value;
 
     </script>
 </body>
