@@ -8,19 +8,44 @@
 </head>
 
 <body>
-    <div id="music">
+    <div id="books">
         <h1 id="title"></h1>
         <h3 id="author"></h3>
     </div>
-    <input type="text" id="name" placeholder="Charles Dickens">
-    <input type="text" id="ttl" placeholder="title">
-    <button onclick="displayToScreen()">Set Author</button>
+
+    <div id="myList">
+        <input type="text" id="name" placeholder="Enter Author's name">
+        <button onclick="displayToScreen()">Set Author</button>
+    </div>
 
     <script>
+        
+        var authors = ["author1", "author2"]
+        var book1 = { author: "author1", title: "book1", published: "year1"};
+        var book2 = { author: "author2", title: "book2", published: "year1"};
+        var book3 = { author: "author3", title: "book3", published: "year1"};
+
+
+
         function displayToScreen() {
-           document.getElementById("title").innerText= document.getElementById("ttl").value;
-           document.getElementById("author").innerText= document.getElementById("name").value;
+            let n = document.getElementById("name").value;
+            authors.push(n);
+            document.getElementById("name").value = "";
+            printAuthList();
         }
+
+        function printAuthList(){
+            let auth= document.getElementById("myList");
+            auth.innerHTML ="";
+            for(let i=0; i<authors.length; i++){
+                if( (i%2)===0){
+                    auth.innerHTML += "<h2 style='color=blue'>" + authors[i].title + "</h2>";
+                }
+                auth.innerHTML += "<h2>" + authors[i] + "</h2>";
+            }
+        }
+
+        printAuthList();
 
     </script>
 </body>
